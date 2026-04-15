@@ -19,7 +19,30 @@
     <main>
       <section>
         <h2>Adicionar Item</h2>
-        <p>Em breve: formulário de adição.</p>
+        <form id="form-adicionar" novalidate>
+          <label for="titulo">Título <span aria-hidden="true">*</span></label>
+          <input type="text" id="titulo" name="titulo" required placeholder="Ex: Reunião de equipe" />
+
+          <label for="data">Data <span aria-hidden="true">*</span></label>
+          <input type="date" id="data" name="data" required />
+
+          <label for="categoria">Categoria <span aria-hidden="true">*</span></label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione...</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="pessoal">Pessoal</option>
+            <option value="estudo">Estudo</option>
+            <option value="saude">Saúde</option>
+            <option value="outro">Outro</option>
+          </select>
+
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" rows="4" placeholder="Detalhes do item..."></textarea>
+
+          <output id="mensagem" role="status"></output>
+
+          <button type="submit">Salvar</button>
+        </form>
       </section>
     </main>
 
