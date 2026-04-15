@@ -1,53 +1,66 @@
+/* ── Reset ── */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ── Base ── */
+
 body {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-  background: #f5f5f5;
+  background: #f0f2f5;
   color: #333;
   min-height: 100vh;
 }
 
+/* ── Header e Navegação ── */
+
 header {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 16px 24px 0;
+  background: #1a1a2e;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #1a1a2e;
-  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  padding: 14px 0 0;
+  letter-spacing: 0.5px;
 }
 
 nav {
   display: flex;
   gap: 4px;
+  margin-top: 10px;
 }
 
 nav a {
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
   text-decoration: none;
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
   border-bottom: 3px solid transparent;
   margin-bottom: -1px;
   transition: color 0.2s, border-color 0.2s;
 }
 
 nav a:hover {
-  color: #4a90e2;
+  color: #fff;
 }
 
 nav a[aria-current="page"] {
-  color: #4a90e2;
+  color: #fff;
   border-bottom-color: #4a90e2;
-  font-weight: 600;
 }
+
+/* ── Main ── */
 
 main {
   max-width: 800px;
@@ -58,7 +71,7 @@ main {
 main h2 {
   font-size: 22px;
   color: #1a1a2e;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 main p {
@@ -67,16 +80,21 @@ main p {
 }
 
 main section {
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 main h3 {
-  font-size: 17px;
-  color: #1a1a2e;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #888;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
   border-bottom: 1px solid #e0e0e0;
 }
+
+/* ── Cards da Home ── */
 
 ol {
   list-style: none;
@@ -88,12 +106,17 @@ ol {
 
 .card-home {
   background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 12px 16px;
+  border: 1px solid #e4e6ea;
+  border-radius: 10px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.card-home:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .card-home strong {
@@ -105,37 +128,45 @@ ol {
 .card-home time {
   font-size: 13px;
   color: #888;
+  white-space: nowrap;
 }
 
+/* ── Badge de categoria ── */
+
 .badge {
-  font-size: 12px;
-  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
   border-radius: 12px;
   background: #e8f0fe;
   color: #3367d6;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .vazio {
   font-size: 14px;
-  color: #999;
+  color: #aaa;
   font-style: italic;
+  padding: 12px 0;
 }
 
-/* Formulário */
+/* ── Formulário ── */
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-  max-width: 480px;
+  gap: 14px;
+  margin-top: 24px;
+  max-width: 500px;
 }
 
 label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1a1a2e;
+  font-size: 13px;
+  font-weight: 700;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 label span {
@@ -146,14 +177,14 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 10px 12px;
+  padding: 10px 14px;
   font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
   background: #fff;
   color: #333;
   font-family: inherit;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus,
@@ -161,6 +192,7 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
 }
 
 textarea {
@@ -168,26 +200,26 @@ textarea {
 }
 
 button[type="submit"] {
-  padding: 10px 24px;
-  background: #4a90e2;
+  padding: 11px 28px;
+  background: #1a1a2e;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   align-self: flex-start;
   transition: background 0.2s;
 }
 
 button[type="submit"]:hover {
-  background: #357abd;
+  background: #2e2e4d;
 }
 
 .mensagem {
   font-size: 14px;
   padding: 10px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .mensagem.sucesso {
@@ -198,4 +230,129 @@ button[type="submit"]:hover {
 .mensagem.erro {
   background: #fff5f5;
   color: #c53030;
+}
+
+/* ── Consulta ── */
+
+ul#lista-itens {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.card-consulta article {
+  background: #fff;
+  border: 1px solid #d0d5dd;
+  border-left: 4px solid #4a90e2;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s;
+}
+
+.card-consulta article:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card-consulta header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  position: static;
+  box-shadow: none;
+  z-index: auto;
+}
+
+.card-consulta strong {
+  font-size: 16px;
+  color: #1a1a2e;
+  flex: 1;
+}
+
+.card-consulta time {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+.card-consulta p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.card-consulta button {
+  align-self: flex-end;
+  margin-top: 4px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.card-consulta button:hover {
+  background: #e53e3e;
+  color: #fff;
+}
+
+/* ── Responsividade ── */
+
+@media (max-width: 600px) {
+  header {
+    padding: 0 16px;
+  }
+
+  nav a {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  main {
+    padding: 24px 16px;
+  }
+
+  main h2 {
+    font-size: 20px;
+  }
+
+  .card-home {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .card-home time {
+    width: 100%;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-consulta header {
+    flex-wrap: wrap;
+  }
+
+  .card-consulta button {
+    align-self: stretch;
+    text-align: center;
+  }
 }
